@@ -1,0 +1,13 @@
+D:\Unity_LAB\Github\TestCode\StudyCode\StudyCode02\bin\Debug\netcoreapp3.1\StudyCode02.exe
+D:\Unity_LAB\Github\TestCode\StudyCode\StudyCode02\bin\Debug\netcoreapp3.1\StudyCode02.deps.json
+D:\Unity_LAB\Github\TestCode\StudyCode\StudyCode02\bin\Debug\netcoreapp3.1\StudyCode02.runtimeconfig.json
+D:\Unity_LAB\Github\TestCode\StudyCode\StudyCode02\bin\Debug\netcoreapp3.1\StudyCode02.runtimeconfig.dev.json
+D:\Unity_LAB\Github\TestCode\StudyCode\StudyCode02\bin\Debug\netcoreapp3.1\StudyCode02.dll
+D:\Unity_LAB\Github\TestCode\StudyCode\StudyCode02\bin\Debug\netcoreapp3.1\StudyCode02.pdb
+D:\Unity_LAB\Github\TestCode\StudyCode\StudyCode02\obj\Debug\netcoreapp3.1\StudyCode02.csprojAssemblyReference.cache
+D:\Unity_LAB\Github\TestCode\StudyCode\StudyCode02\obj\Debug\netcoreapp3.1\StudyCode02.AssemblyInfoInputs.cache
+D:\Unity_LAB\Github\TestCode\StudyCode\StudyCode02\obj\Debug\netcoreapp3.1\StudyCode02.AssemblyInfo.cs
+D:\Unity_LAB\Github\TestCode\StudyCode\StudyCode02\obj\Debug\netcoreapp3.1\StudyCode02.csproj.CoreCompileInputs.cache
+D:\Unity_LAB\Github\TestCode\StudyCode\StudyCode02\obj\Debug\netcoreapp3.1\StudyCode02.dll
+D:\Unity_LAB\Github\TestCode\StudyCode\StudyCode02\obj\Debug\netcoreapp3.1\StudyCode02.pdb
+D:\Unity_LAB\Github\TestCode\StudyCode\StudyCode02\obj\Debug\netcoreapp3.1\StudyCode02.genruntimeconfig.cache
