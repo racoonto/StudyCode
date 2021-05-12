@@ -43,7 +43,7 @@ namespace harrypotter
             Print("초대장 닫기_ Press any key");
             Console.ReadKey();
 
-            Print("\n\n준비물을 사기위해 다이애건 앨리에 왔습니다.");
+            Print("\n\n준비물을 사기 위해 다이애건 앨리에 왔습니다.");
             do
             {
                 Print("1: 지팡이 구입하기 2: 망토 구입하기");
@@ -76,20 +76,22 @@ namespace harrypotter
             Console.ReadKey();
 
             int mydelay = 500;
-            Console.Write("\n칙\n");
+            Console.Write("\n     칙\n");
             Thread.Sleep(mydelay);
-            Console.Write("칙\n");
+            Console.Write("     칙\n");
             Thread.Sleep(mydelay);
-            Console.Write("폭\n");
+            Console.Write("     폭\n");
             Thread.Sleep(mydelay);
-            Console.Write("폭\n");
+            Console.Write("     폭\n");
 
-            Console.WriteLine("호그와트에 도착했습니다!!\n");
+            Console.WriteLine("\n호그와트에 도착했습니다!!\n");
             Thread.Sleep(mydelay);
-            Console.WriteLine("인적사항을 기록하고 모험을 시작합니다!!\n");
+            Console.WriteLine("인적사항을 기록하고 모험을 시작합니다!!");
             Thread.Sleep(mydelay);
-            Console.WriteLine($"이름 : " + user.DisplayName + " /레벨 : " + user.level + " /경험치 : " + user.exp + " /HP : " + user.maxHp + " /공격력 : " + user.power + " /방어력 : " + user.defense + " /마나 : " + user.mana);
+            Console.WriteLine($"이름 : " + user.DisplayName + " \n레벨 : " + user.level + " \n경험치 : " + user.exp + " \nHP : " + user.maxHp + " \n공격력 : " + user.power + " \n방어력 : " + user.defense + " \n마나 : " + user.mana);
 
+            Print($"{user.DisplayName}님의 여정을 응원합니다! 확인_ Press any key");
+            Console.ReadKey();
             //Console.WriteLine("List 테스트 " + magicspell.Contains("익스펙토 페트로눔"));
 
             List<string> magicspell = new List<string>();
@@ -108,31 +110,39 @@ namespace harrypotter
 
                 if (slectAdvanture == "1") // 수업 듣기
                 {
-                    //수업 목록 보여주기
-                    Console.WriteLine("\n듣고 싶은 수업을 선택하세요!");
-
-                    foreach (string spel in magicspell)
+                    if (magicspell.Count > 0)
                     {
-                        int index = magicspell.IndexOf(spel) + 1;
-                        Console.WriteLine(index + $":{spel}");
+                        //수업 목록 보여주기
+                        Console.WriteLine("\n듣고 싶은 수업을 선택하세요!");
+
+                        foreach (string spel in magicspell)
+                        {
+                            int index = magicspell.IndexOf(spel) + 1;
+                            Console.WriteLine(index + $":{spel}");
+                        }
+
+                        int SelectClass = int.Parse(Console.ReadLine()) - 1; //수업 선택
+
+                        user.magicspell.Add(magicspell[SelectClass]); //유저에게 추가
+
+                        Console.WriteLine("\n마법 [ " + magicspell[SelectClass] + " ] 을/를 배웠습니다! \n 이제 [ " + magicspell[SelectClass] + "] 을/를 쓸 수 있습니다.");
+
+                        magicspell.Remove(magicspell[SelectClass]); //리스트에서 삭제
+
+                        //foreach (string spel in user.magicspell)
+                        //{
+                        //    Console.WriteLine("유저가 배웠던 마법 리스트 = " + spel);
+                        //}
+
+                        //foreach (string spel in magicspell)
+                        //{
+                        //    Console.WriteLine("안배운 마법 = " + spel);
+                        //}
                     }
-
-                    int SelectClass = int.Parse(Console.ReadLine()) - 1; //수업 선택
-
-                    user.magicspell.Add(magicspell[SelectClass]);
-
-                    //Console.WriteLine("유저가 습득한 마법 = " + magicspell[SelectClass]);
-                    magicspell.Remove(magicspell[SelectClass]);
-
-                    //foreach (string spel in user.magicspell)
-                    //{
-                    //    Console.WriteLine("유저가 배웠던 마법 리스트 = " + spel);
-                    //}
-
-                    //foreach (string spel in magicspell)
-                    //{
-                    //    Console.WriteLine("안배운 마법 = " + spel);
-                    //}
+                    else
+                    {
+                        Console.WriteLine("\n더 이상 배울 수 있는 과목이 없습니다!");
+                    }
                 }
 
                 if (slectAdvanture == "2") //사냥 하기
@@ -154,27 +164,26 @@ namespace harrypotter
             do
             {
                 List<String> wandList = new List<string>(); //랜덤 지팡이 이름
-                wandList.Add("딱총나무 지팡이 : 재료. 테스트랄 꼬리 털 ");
-                wandList.Add("호두나무 지팡이 : 재료. 용의 심장 줄");
-                wandList.Add("산사나무 지팡이 : 재료. 유니콘 꼬리 털");
-                wandList.Add("호랑가시나무 지팡이 : 재료. 피닉스(불사조) 깃털");
+                wandList.Add("[딱총나무 지팡이] 재료 : 테스트랄 꼬리 털 ");
+                wandList.Add("[호두나무 지팡이] 재료 : 용의 심장 줄");
+                wandList.Add("[산사나무 지팡이] 재료 : 유니콘 꼬리 털");
+                wandList.Add("[호랑가시나무 지팡이] 재료 : 피닉스(불사조) 깃털");
 
                 int indexWand = random.Next(0, 4); // 랜덤 지팡이
                 userWnad = wandList[indexWand];
                 power = random.Next(5, 11); //랜덤 공격력
 
-                Print("\n\n지팡이를 집었습니다.");
-                Print(userWnad + "\n공격력" + power);
+                Print("\n지팡이를 집었습니다. " + userWnad + "\n공격력" + power);
                 Print("이 지팡이로 하시겠습니까? Y/N");
 
                 userWnadInput = Console.ReadLine();
                 if (userWnadInput.ToLower() == "y")
                 {
-                    Print("지팡이를 장착했습니다!\n");
+                    Print("\n지팡이를 장착했습니다!\n");
                 }
                 else
                 {
-                    Print("새로운 지팡이를 선택합니다\n");
+                    Print("\n새로운 지팡이를 선택합니다\n");
                 }
             } while (userWnadInput.ToLower() == "n");
         }
@@ -194,18 +203,17 @@ namespace harrypotter
                 userCloak = cloakList[indexCloak];
                 defense = random.Next(5, 11);
 
-                Print("\n\n망토를 집었습니다");
-                Print(userCloak + "\n방어력 : " + defense);
+                Print("\n망토를 집었습니다. [" + userCloak + "]\n방어력 : " + defense);
                 Print("이 망토로 하시겠습니까? Y/N");
 
                 userClockInput = Console.ReadLine();
                 if (userClockInput.ToLower() == "y")
                 {
-                    Print("망토를 둘렀습니다!\n");
+                    Print("\n망토를 둘렀습니다!\n");
                 }
                 else
                 {
-                    Print("새로운 망토를 선택합니다\n");
+                    Print("\n새로운 망토를 선택합니다\n");
                 }
             } while (userClockInput.ToLower() == "n");
         }
