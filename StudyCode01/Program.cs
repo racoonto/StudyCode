@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace StudyCode01
+namespace StudyCode01 // 텍스트 셔플게임
 {
     internal class Program
     {
@@ -79,7 +79,7 @@ namespace StudyCode01
                 s = r.ReadLine(); // 다음 문제의 정답 문자열 읽어 들이기
                 n++;
             }
-            Console.WriteLine("문제는 이상압니다.");
+            Console.WriteLine("문제는 이상입니다.");
             r.Close();
         }
     }

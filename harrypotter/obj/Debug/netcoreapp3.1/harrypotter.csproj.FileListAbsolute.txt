@@ -1,0 +1,13 @@
+D:\Unity_LAB\Github\StudyCode\harrypotter\bin\Debug\netcoreapp3.1\harrypotter.exe
+D:\Unity_LAB\Github\StudyCode\harrypotter\bin\Debug\netcoreapp3.1\harrypotter.deps.json
+D:\Unity_LAB\Github\StudyCode\harrypotter\bin\Debug\netcoreapp3.1\harrypotter.runtimeconfig.json
+D:\Unity_LAB\Github\StudyCode\harrypotter\bin\Debug\netcoreapp3.1\harrypotter.runtimeconfig.dev.json
+D:\Unity_LAB\Github\StudyCode\harrypotter\bin\Debug\netcoreapp3.1\harrypotter.dll
+D:\Unity_LAB\Github\StudyCode\harrypotter\bin\Debug\netcoreapp3.1\harrypotter.pdb
+D:\Unity_LAB\Github\StudyCode\harrypotter\obj\Debug\netcoreapp3.1\harrypotter.csprojAssemblyReference.cache
+D:\Unity_LAB\Github\StudyCode\harrypotter\obj\Debug\netcoreapp3.1\harrypotter.AssemblyInfoInputs.cache
+D:\Unity_LAB\Github\StudyCode\harrypotter\obj\Debug\netcoreapp3.1\harrypotter.AssemblyInfo.cs
+D:\Unity_LAB\Github\StudyCode\harrypotter\obj\Debug\netcoreapp3.1\harrypotter.csproj.CoreCompileInputs.cache
+D:\Unity_LAB\Github\StudyCode\harrypotter\obj\Debug\netcoreapp3.1\harrypotter.dll
+D:\Unity_LAB\Github\StudyCode\harrypotter\obj\Debug\netcoreapp3.1\harrypotter.pdb
+D:\Unity_LAB\Github\StudyCode\harrypotter\obj\Debug\netcoreapp3.1\harrypotter.genruntimeconfig.cache

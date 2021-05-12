@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic; //List 사용
 
-namespace StudyCode02
+namespace StudyCode02 //머드게임
 {
     internal class Program
     {
