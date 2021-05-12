@@ -14,7 +14,7 @@ namespace harrypotter
         public int level = 1;
         public int exp = 0; // 경험치
         public int mana = 10; // 마나
-        private List<int> magicspell = new List<int>();
+        public List<string> magicspell = new List<string>();
 
         public string DisplayName
         {

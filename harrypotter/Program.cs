@@ -6,9 +6,15 @@ namespace harrypotter
 {
     internal class Program
     {
-        private enum MagicSpell
+        private enum MagigSpell
         {
-        }
+            magic01,
+            magic02,
+            magic03,
+            magic04
+        };
+
+        public const string magic01 = "익스펙토 페트로눔";
 
         private static Random random = new Random();
 
@@ -84,11 +90,9 @@ namespace harrypotter
             Thread.Sleep(mydelay);
             Console.WriteLine($"이름 : " + user.DisplayName + " /레벨 : " + user.level + " /경험치 : " + user.exp + " /HP : " + user.maxHp + " /공격력 : " + user.power + " /방어력 : " + user.defense + " /마나 : " + user.mana);
 
-            Console.WriteLine("\n모험을 선택해주세요");
-            Console.WriteLine("1. 수업 듣기");
-            Console.WriteLine("2. 금지된 숲에서 사냥하기");
+            //Console.WriteLine("List 테스트 " + magicspell.Contains("익스펙토 페트로눔"));
 
-            List<String> magicspell = new List<string>();
+            List<string> magicspell = new List<string>();
             magicspell.Add("익스펙토 페트로눔");
             magicspell.Add("스투페파이");
             magicspell.Add("봄바르다");
@@ -96,23 +100,42 @@ namespace harrypotter
 
             while (true)
             {
-                string slectAdvanture = Console.ReadLine();
-                if (slectAdvanture == "1")
-                {
-                    MagicSpell magic = new MagicSpell();
+                Console.WriteLine("\n모험을 선택해주세요");
+                Console.WriteLine("1. 수업 듣기");
+                Console.WriteLine("2. 금지된 숲에서 사냥하기");
 
+                string slectAdvanture = Console.ReadLine();
+
+                if (slectAdvanture == "1") // 수업 듣기
+                {
+                    //수업 목록 보여주기
                     Console.WriteLine("\n듣고 싶은 수업을 선택하세요!");
-                    foreach (var spel in magicspell)
+
+                    foreach (string spel in magicspell)
                     {
                         int index = magicspell.IndexOf(spel) + 1;
-                        Console.WriteLine(index + $" : {spel}");
+                        Console.WriteLine(index + $":{spel}");
                     }
 
-                    String SelectClass = Console.ReadLine();
-                    LeanMagicSpell(SelectClass);
+                    int SelectClass = int.Parse(Console.ReadLine()) - 1; //수업 선택
+
+                    user.magicspell.Add(magicspell[SelectClass]);
+
+                    //Console.WriteLine("유저가 습득한 마법 = " + magicspell[SelectClass]);
+                    magicspell.Remove(magicspell[SelectClass]);
+
+                    //foreach (string spel in user.magicspell)
+                    //{
+                    //    Console.WriteLine("유저가 배웠던 마법 리스트 = " + spel);
+                    //}
+
+                    //foreach (string spel in magicspell)
+                    //{
+                    //    Console.WriteLine("안배운 마법 = " + spel);
+                    //}
                 }
 
-                if (slectAdvanture == "2")
+                if (slectAdvanture == "2") //사냥 하기
                 {
                 }
             }
@@ -120,6 +143,9 @@ namespace harrypotter
 
         private static void LeanMagicSpell(string selectClass)
         {
+            if (selectClass == "1")
+            {
+            }
         }
 
         private static void CreateNewWand(out string userWnad, out int power)
