@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace harrypotter
 {
     internal class Program
     {
+        private enum MagicSpell
+        {
+        }
+
         private static Random random = new Random();
 
         private static void Main(string[] args)
@@ -12,7 +17,8 @@ namespace harrypotter
             Print("호그와트로부터 초대장이 날아왔습니다! \n입학을 원하면 이름을 서명해주세요");
 
             String Username = Console.ReadLine();
-            User user = new User(Username, 0, 0);
+            User user = new User(Username, 0, 10);
+            user.hp = user.maxHp;
 
             Print("\n---------------------------------------------------------\n");
             Print($"친해하는 {Username} 씨에게,");
@@ -58,10 +64,62 @@ namespace harrypotter
                 }
             } while (user.power == 0 || user.defense == 0);
 
-            Console.WriteLine("필요한 물품을 모두 구매했습니다! \n 호그와트로 출발합니다!!");
+            Console.WriteLine("필요한 물품을 모두 구매했습니다! \n호그와트로 출발합니다!!");
 
             Print("호그와트행 급행열차에 탑승합니다_ Press any key");
             Console.ReadKey();
+
+            int mydelay = 500;
+            Console.Write("\n칙\n");
+            Thread.Sleep(mydelay);
+            Console.Write("칙\n");
+            Thread.Sleep(mydelay);
+            Console.Write("폭\n");
+            Thread.Sleep(mydelay);
+            Console.Write("폭\n");
+
+            Console.WriteLine("호그와트에 도착했습니다!!\n");
+            Thread.Sleep(mydelay);
+            Console.WriteLine("인적사항을 기록하고 모험을 시작합니다!!\n");
+            Thread.Sleep(mydelay);
+            Console.WriteLine($"이름 : " + user.DisplayName + " /레벨 : " + user.level + " /경험치 : " + user.exp + " /HP : " + user.maxHp + " /공격력 : " + user.power + " /방어력 : " + user.defense + " /마나 : " + user.mana);
+
+            Console.WriteLine("\n모험을 선택해주세요");
+            Console.WriteLine("1. 수업 듣기");
+            Console.WriteLine("2. 금지된 숲에서 사냥하기");
+
+            List<String> magicspell = new List<string>();
+            magicspell.Add("익스펙토 페트로눔");
+            magicspell.Add("스투페파이");
+            magicspell.Add("봄바르다");
+            magicspell.Add("엑스펠리아루무스");
+
+            while (true)
+            {
+                string slectAdvanture = Console.ReadLine();
+                if (slectAdvanture == "1")
+                {
+                    MagicSpell magic = new MagicSpell();
+
+                    Console.WriteLine("\n듣고 싶은 수업을 선택하세요!");
+                    foreach (var spel in magicspell)
+                    {
+                        int index = magicspell.IndexOf(spel) + 1;
+                        Console.WriteLine(index + $" : {spel}");
+                    }
+
+                    String SelectClass = Console.ReadLine();
+                    LeanMagicSpell(SelectClass);
+                }
+
+                if (slectAdvanture == "2")
+                {
+                }
+            }
+        }
+
+        private static void LeanMagicSpell(string selectClass)
+        {
         }
 
         private static void CreateNewWand(out string userWnad, out int power)
