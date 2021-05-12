@@ -17,7 +17,6 @@ namespace harrypotter
         public Monster(int Level)
         {
             id = ++idTotal;
-
             name = "몬스터" + id;
             power = random.Next(1, 2);
             hp = random.Next(1, 2) + Level;
@@ -27,6 +26,21 @@ namespace harrypotter
         {
             targetPlayer.hp -= power;
             Console.WriteLine($"{name}의 공격으로 {targetPlayer.DisplayName}의 체력은 {targetPlayer.hp}가 되었다");
+        }
+
+        public class Troll : Monster
+        {
+            public Troll(int Level) : base(Level)
+            {
+                name = "트롤";
+                power += Level;
+            }
+
+            public override void OnAttack(User targetPlayer)
+            {
+                targetPlayer.hp -= power;
+                Console.WriteLine($"{name}의 공격으로 {targetPlayer.DisplayName}의 체력은 {targetPlayer.hp}가 되었다");
+            }
         }
     }
 }

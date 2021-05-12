@@ -6,14 +6,6 @@ namespace harrypotter
 {
     internal class Program
     {
-        private enum MagigSpell
-        {
-            magic01,
-            magic02,
-            magic03,
-            magic04
-        };
-
         public const string magic01 = "익스펙토 페트로눔";
 
         private static Random random = new Random();
@@ -76,19 +68,19 @@ namespace harrypotter
             Console.ReadKey();
 
             int mydelay = 500;
-            Console.Write("\n     칙\n");
+            Print("\n     칙\n");
             Thread.Sleep(mydelay);
-            Console.Write("     칙\n");
+            Print("     칙\n");
             Thread.Sleep(mydelay);
-            Console.Write("     폭\n");
+            Print("     폭\n");
             Thread.Sleep(mydelay);
-            Console.Write("     폭\n");
+            Print("     폭\n");
 
-            Console.WriteLine("\n호그와트에 도착했습니다!!\n");
+            Print("\n호그와트에 도착했습니다!!\n");
             Thread.Sleep(mydelay);
-            Console.WriteLine("인적사항을 기록하고 모험을 시작합니다!!");
+            Print("인적사항을 기록하고 모험을 시작합니다!!");
             Thread.Sleep(mydelay);
-            Console.WriteLine($"이름 : " + user.DisplayName + " \n레벨 : " + user.level + " \n경험치 : " + user.exp + " \nHP : " + user.maxHp + " \n공격력 : " + user.power + " \n방어력 : " + user.defense + " \n마나 : " + user.mana);
+            Print($"이름 : " + user.DisplayName + " \n레벨 : " + user.level + " \n경험치 : " + user.exp + " \nHP : " + user.maxHp + " \n공격력 : " + user.power + " \n방어력 : " + user.defense + " \n마나 : " + user.mana);
 
             Print($"{user.DisplayName}님의 여정을 응원합니다! 확인_ Press any key");
             Console.ReadKey();
@@ -102,9 +94,9 @@ namespace harrypotter
 
             while (true)
             {
-                Console.WriteLine("\n모험을 선택해주세요");
-                Console.WriteLine("1. 수업 듣기");
-                Console.WriteLine("2. 금지된 숲에서 사냥하기");
+                Print("\n모험을 선택해주세요");
+                Print("1. 수업 듣기");
+                Print("2. 금지된 숲에서 사냥하기");
 
                 string slectAdvanture = Console.ReadLine();
 
@@ -113,19 +105,19 @@ namespace harrypotter
                     if (magicspell.Count > 0)
                     {
                         //수업 목록 보여주기
-                        Console.WriteLine("\n듣고 싶은 수업을 선택하세요!");
+                        Print("\n듣고 싶은 수업을 선택하세요!");
 
                         foreach (string spel in magicspell)
                         {
                             int index = magicspell.IndexOf(spel) + 1;
-                            Console.WriteLine(index + $":{spel}");
+                            Print(index + $":{spel}");
                         }
 
                         int SelectClass = int.Parse(Console.ReadLine()) - 1; //수업 선택
 
                         user.magicspell.Add(magicspell[SelectClass]); //유저에게 추가
 
-                        Console.WriteLine("\n마법 [ " + magicspell[SelectClass] + " ] 을/를 배웠습니다! \n 이제 [ " + magicspell[SelectClass] + "] 을/를 쓸 수 있습니다.");
+                        Print("\n마법 [ " + magicspell[SelectClass] + " ] 을/를 배웠습니다! \n 이제 [ " + magicspell[SelectClass] + "] 을/를 쓸 수 있습니다.");
 
                         magicspell.Remove(magicspell[SelectClass]); //리스트에서 삭제
 
@@ -141,21 +133,73 @@ namespace harrypotter
                     }
                     else
                     {
-                        Console.WriteLine("\n더 이상 배울 수 있는 과목이 없습니다!");
+                        Print("\n더 이상 배울 수 있는 과목이 없습니다!");
                     }
                 }
 
                 if (slectAdvanture == "2") //사냥 하기
                 {
+                    Print("\n 금지된 숲에 입장하셨습니다.");
+                    Print("몬스터가 출몰합니다!!");
+
+                    //몬스터 생성
+                    int monsterCount = random.Next(1, 3);
+                    List<Monster> monsters = new List<Monster>();
+                    for (int i = 0; i < monsterCount; i++)
+                    {
+                        monsters.Add(new Monster(user.level));
+                    }
+
+                    Print($"{monsterCount}마리의 몬스터가 나타났습니다!");
+
+                    while (monsters.Count > 0)
+                    {
+                        Print("몬스터의 정보");
+                        foreach (var m in monsters)
+                        {
+                            PrintMonster(m);
+                        }
+
+                        PrintUser(user); //유저 정보 출력
+
+                        PlayerTurn(user, monsters); //유저 행동
+                    }
                 }
             }
         }
 
-        private static void LeanMagicSpell(string selectClass)
+        private static void PlayerTurn(User user, List<Monster> monsters)
         {
-            if (selectClass == "1")
+            Print("행동을 선택해주세요.");
+            Print("1: 마법 공격  2: 회복  3: 도망");
+            char userInput = GetAllowedAnswer("1", "2", "3", "4")[0];
+
+            switch (userInput)
             {
+                case '1': // 마법 공격
+                    PlayerAttack(user, monsters);
+                    break;
+
+                case '2': // 회복
+                    break;
+
+                case '3': // 도망
+                    break;
+
+                default:
+                    break;
             }
+        }
+
+        private static void PlayerAttack(User user, List<Monster> monster)
+        {
+            Print("사용할 마법을 선택해 주세요");
+            foreach (string spel in user.magicspell)
+            {
+                int index = user.magicspell.IndexOf(spel) + 1;
+                Print(index + $":{spel}");
+            }
+            String SelMagic = Console.ReadLine();
         }
 
         private static void CreateNewWand(out string userWnad, out int power)
@@ -221,6 +265,28 @@ namespace harrypotter
         private static void Print(String log)
         {
             Console.WriteLine(log);
+        }
+
+        private static void PrintUser(User user)
+        {
+            Print("당신의 정보");
+            Print($"이름 : " + user.DisplayName + " \n레벨 : " + user.level + " \n경험치 : " + user.exp + " \nHP : " + user.maxHp + " \n공격력 : " + user.power + " \n방어력 : " + user.defense + " \n마나 : " + user.mana);
+        }
+
+        private static void PrintMonster(Monster monster)
+        {
+            Print($"{monster.name} 공격력:{monster.power}, 체력:{monster.hp}");
+        }
+
+        private static string GetAllowedAnswer(params string[] alllowsAnserStringArray)
+        {
+            string retryOrQuit;
+            List<string> allowedAnswer = new List<string>(alllowsAnserStringArray);
+            do
+            {
+                retryOrQuit = Console.ReadLine().ToUpper();
+            } while (allowedAnswer.Contains(retryOrQuit) == false);
+            return retryOrQuit;
         }
     }
 }
