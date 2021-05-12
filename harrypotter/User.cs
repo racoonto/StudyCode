@@ -7,7 +7,7 @@ namespace harrypotter
     internal class User
     {
         private string userName;
-        public int power;
+        public int power = 0;
         public int maxHp;
         public int hp = 0;
         public int defense = 0;
