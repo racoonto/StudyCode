@@ -234,35 +234,59 @@ namespace harrypotter
 
         private static bool PlayerTurn(User user, List<Monster> monsters) // 플레이어 공격 턴
         {
-            Print("\n행동을 선택해주세요.");
-            Print("1: 마법 공격  2: 회복  3: 도망");
-            char userInput = GetAllowedAnswer("1", "2", "3", "4")[0];
-
-            switch (userInput)
+            bool actionFlag = false;
+            while (!actionFlag)
             {
-                case '1': // 마법 공격
-                    PlayerAttack(user, monsters); //유저 공격
-                    break;
+                Print("\n행동을 선택해주세요.");
+                Print("1: 마법 공격  2: 회복 아이템 사용  3: 도망");
+                char userInput = GetAllowedAnswer("1", "2", "3", "4")[0];
 
-                case '2': // 회복
-                    user.RestoreHp();
-                    break;
+                switch (userInput)
+                {
+                    case '1': // 마법 공격
+                        PlayerAttack(user, monsters); //유저 공격
+                        actionFlag = true;
+                        break;
 
-                case '3': // 도망
-                    int result = random.Next(0, 10);
-                    bool successRun = result > 3;
+                    case '2': // 회복
+                        if (user.item.Count > 0)
+                        {
+                            if (user.hp == user.maxHp)
+                            {
+                                Print("이미 HP가 가득 차 있습니다.");
+                                actionFlag = false;
+                            }
+                            else
+                            {
+                                user.hp += user.item[0].recovery;
+                                //user.mana += user.item[0].recovery;
+                                Print($"아이템을 사용했습니다. Hp가 회복됩니다. HP:{user.hp}/{user.maxHp}");
+                                actionFlag = true;
+                            }
+                        }
+                        else
+                        {
+                            Print("가지고 있는 포션이 없습니다.");
+                            actionFlag = false;
+                        }
+                        break;
 
-                    string log;
-                    if (successRun)
-                        log = "성공적으로 도망쳤습니다";
-                    else
-                        log = "도망에 실패했습니다.";
-                    Console.WriteLine(log);
+                    case '3': // 도망
+                        int result = random.Next(0, 10);
+                        bool successRun = result > 3;
 
-                    return successRun;
+                        string log;
+                        if (successRun)
+                            log = "성공적으로 도망쳤습니다";
+                        else
+                            log = "도망에 실패했습니다.";
+                        Console.WriteLine(log);
 
-                default:
-                    break;
+                        return successRun;
+
+                    default:
+                        break;
+                }
             }
 
             return false;
@@ -405,7 +429,7 @@ namespace harrypotter
                 //경험치 획득
                 user.GetExp(10);
 
-                bool dropitem = random.Next(1, 10) > 1;
+                bool dropitem = random.Next(1, 10) > 5;
                 if (dropitem)
                 {
                     Item potion = new Item();
@@ -492,7 +516,7 @@ namespace harrypotter
         private static void PrintUser(User user)
         {
             Print("\n당신의 정보");
-            Print($"이름: " + user.DisplayName + " 레벨: " + user.level + " 경험치: " + user.exp + " HP: " + user.hp + " 공격력: " + user.power + " 방어력: " + user.defense + " 마나: " + user.mana);
+            Print($"이름: {user.DisplayName} 레벨:{user.level} 경험치:{user.exp} HP:{user.hp}/{user.maxHp} 공격력:{user.power} 방어력:{user.defense} 마나:{user.mana}/{user.MaxMana}");
         }
 
         private static void PrintMonster(Monster monster)

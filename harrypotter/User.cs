@@ -44,19 +44,22 @@ namespace harrypotter
                 maxHp += 5;
                 MaxMana += 5;
 
-                hp = maxHp;
-                mana = MaxMana;
+                //hp = maxHp;
+                //mana = MaxMana;
 
-                Console.WriteLine($"{DisplayName}님이 레벨업했습니다!! Level: {level} \n체력과 마나가 모두 회복됩니다. HP:{maxHp} 마나:{MaxMana}");
+                Console.WriteLine($"{DisplayName}님이 레벨업했습니다!! Level: {level}");
             }
         }
 
-        internal void RestoreHp()
-        {
-            if (hp < maxHp)
-                hp += 5;
-            if (mana < MaxMana)
-                mana += 15;
-        }
+        //internal void RestoreHp()
+        //{
+        //    if (item.Count > 0)
+        //    {
+        //        if (hp < maxHp)
+        //            hp += 5;
+        //        if (mana < MaxMana)
+        //            mana += 15;
+        //    }
+        //}
     }
 }

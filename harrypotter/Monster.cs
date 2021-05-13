@@ -19,13 +19,13 @@ namespace harrypotter
             id = ++idTotal;
             name = "몬스터" + id;
             power = random.Next(5, 15);
-            hp = random.Next(20, 30) + Level;
+            hp = random.Next(15, 20) + Level;
         }
 
         virtual public void OnAttack(User targetPlayer)
         {
             targetPlayer.hp -= power;
-            Console.WriteLine($"{name}이 공격했습니다! {targetPlayer.DisplayName}님의 체력: {targetPlayer.hp}가 되었습니다.\n");
+            Console.WriteLine($"{name}이 공격했습니다! {targetPlayer.DisplayName}님의 HP: {targetPlayer.hp}가 되었습니다.\n");
         }
 
         virtual public void OnHit(User user, int damage, int dePower, int userMana)

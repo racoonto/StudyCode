@@ -21,10 +21,10 @@ namespace harrypotter
             recovery = random.Next(10, 20);
         }
 
-        virtual public void OnRecovery(User user)
-        {
-            user.hp += recovery;
-            Console.WriteLine($"HP 가 회복되었습니다. HP: {user.hp}");
-        }
+        //virtual public void OnRecovery(User user)
+        //{
+        //    user.hp += recovery;
+        //    Console.WriteLine($"HP 가 회복되었습니다. HP: {user.hp}");
+        //}
     }
 }
