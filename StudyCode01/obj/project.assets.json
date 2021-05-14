@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Unity_LAB\\Github\\StudyCode\\StudyCode01\\StudyCode01.csproj",
-      "projectName": "StudyCode01",
-      "projectPath": "D:\\Unity_LAB\\Github\\StudyCode\\StudyCode01\\StudyCode01.csproj",
+      "projectUniqueName": "D:\\Unity_LAB\\Github\\StudyCode\\StudyCode01\\셔플게임.csproj",
+      "projectName": "셔플게임",
+      "projectPath": "D:\\Unity_LAB\\Github\\StudyCode\\StudyCode01\\셔플게임.csproj",
       "packagesPath": "C:\\Users\\racoo\\.nuget\\packages\\",
       "outputPath": "D:\\Unity_LAB\\Github\\StudyCode\\StudyCode01\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,0 +1,13 @@
+D:\Unity_LAB\Github\StudyCode\Bubble sort\bin\Debug\netcoreapp3.1\Bubble sort.exe
+D:\Unity_LAB\Github\StudyCode\Bubble sort\bin\Debug\netcoreapp3.1\Bubble sort.deps.json
+D:\Unity_LAB\Github\StudyCode\Bubble sort\bin\Debug\netcoreapp3.1\Bubble sort.runtimeconfig.json
+D:\Unity_LAB\Github\StudyCode\Bubble sort\bin\Debug\netcoreapp3.1\Bubble sort.runtimeconfig.dev.json
+D:\Unity_LAB\Github\StudyCode\Bubble sort\bin\Debug\netcoreapp3.1\Bubble sort.dll
+D:\Unity_LAB\Github\StudyCode\Bubble sort\bin\Debug\netcoreapp3.1\Bubble sort.pdb
+D:\Unity_LAB\Github\StudyCode\Bubble sort\obj\Debug\netcoreapp3.1\Bubble sort.csprojAssemblyReference.cache
+D:\Unity_LAB\Github\StudyCode\Bubble sort\obj\Debug\netcoreapp3.1\Bubble sort.AssemblyInfoInputs.cache
+D:\Unity_LAB\Github\StudyCode\Bubble sort\obj\Debug\netcoreapp3.1\Bubble sort.AssemblyInfo.cs
+D:\Unity_LAB\Github\StudyCode\Bubble sort\obj\Debug\netcoreapp3.1\Bubble sort.csproj.CoreCompileInputs.cache
+D:\Unity_LAB\Github\StudyCode\Bubble sort\obj\Debug\netcoreapp3.1\Bubble sort.dll
+D:\Unity_LAB\Github\StudyCode\Bubble sort\obj\Debug\netcoreapp3.1\Bubble sort.pdb
+D:\Unity_LAB\Github\StudyCode\Bubble sort\obj\Debug\netcoreapp3.1\Bubble sort.genruntimeconfig.cache
