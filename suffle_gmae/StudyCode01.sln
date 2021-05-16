@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Struct 구조체", "..\Stru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic", "..\Generic\Generic.csproj", "{725D7AAB-C7E6-41E9-8C51-D0AAC314384C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "람다식", "..\람다식\람다식.csproj", "{DA9B488A-A2E1-44BC-A9E7-32000F37506C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "델리게이트", "..\델리게이트\델리게이트.csproj", "{4D2330BA-72DF-451E-A7AA-3E9A32B3632F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,14 @@ Global
 		{725D7AAB-C7E6-41E9-8C51-D0AAC314384C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{725D7AAB-C7E6-41E9-8C51-D0AAC314384C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{725D7AAB-C7E6-41E9-8C51-D0AAC314384C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA9B488A-A2E1-44BC-A9E7-32000F37506C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA9B488A-A2E1-44BC-A9E7-32000F37506C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA9B488A-A2E1-44BC-A9E7-32000F37506C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA9B488A-A2E1-44BC-A9E7-32000F37506C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D2330BA-72DF-451E-A7AA-3E9A32B3632F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D2330BA-72DF-451E-A7AA-3E9A32B3632F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D2330BA-72DF-451E-A7AA-3E9A32B3632F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D2330BA-72DF-451E-A7AA-3E9A32B3632F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
